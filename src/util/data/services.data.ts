@@ -39,3 +39,7 @@ export const draftServices = [
         action:"Modify"
     }
 ]
+
+export const linksServices = ["Search", "FAQ", "CDF downloads", "LOU data analytics", "Recent posts"]
+
+export const helpfulLinks = ["Disclaimer", "Terms & Conditions", "Privacy Policy", "Cookie Policy", "Refund Policy"]
