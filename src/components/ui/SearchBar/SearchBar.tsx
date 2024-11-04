@@ -1,4 +1,5 @@
 import Button from "../Button/Button"
+import { ButtonType } from "../Button/button.types"
 
 const SearchBar = ({placeholder}:{placeholder:string}) => {
     return (
@@ -8,7 +9,7 @@ const SearchBar = ({placeholder}:{placeholder:string}) => {
                 className="w-full text-gray-700 focus:outline-none"
                 placeholder={placeholder}
             />
-            <Button text="Search" />
+            <Button type={ButtonType.PRIMARY} text="Search" />
         </div>
     )
 }

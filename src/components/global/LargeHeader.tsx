@@ -1,10 +1,14 @@
-
-const LargeHeader = ({text, color}:{text:string, color:string}) => {
-  return (
-    <div>
-      <h1 className={`text-${color} font-bold text-5xl`}>{text}</h1>
-    </div>
-  )
+interface LargeHeaderProps {
+  text: string;
+  className?: string; 
 }
 
-export default LargeHeader
+const LargeHeader: React.FC<LargeHeaderProps> = ({ text, className = '' }) => {
+  return (
+    <div>
+      <h1 className={`font-bold text-5xl ${className}`}>{text}</h1>
+    </div>
+  );
+};
+
+export default LargeHeader;

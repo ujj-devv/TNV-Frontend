@@ -1,7 +1,7 @@
 
 const AvailableCertifications = () => {
   return (
-    <div>
+    <div className="bg-[#373656]">
       AvailableCertifications
     </div>
   )
