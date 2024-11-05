@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { ButtonGroupType } from "../pages/Home/PricingSection";
-import Button from "../ui/Button/Button";
+import Button from "../../ui/Button/Button";
+import { ButtonGroupType } from "./ButtonGroup.types";
 
 type ButtonGroupPropType = {
     setActiveButton: Dispatch<SetStateAction<number>>; 

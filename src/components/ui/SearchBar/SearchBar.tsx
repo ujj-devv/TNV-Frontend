@@ -9,7 +9,7 @@ const SearchBar = ({placeholder}:{placeholder:string}) => {
                 className="w-full text-gray-700 focus:outline-none"
                 placeholder={placeholder}
             />
-            <Button type={ButtonType.PRIMARY} text="Search" />
+            <Button onClick={() => ""} type={ButtonType.PRIMARY} text="Search" />
         </div>
     )
 }

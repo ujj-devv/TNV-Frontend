@@ -15,9 +15,9 @@ const Home = () => {
         <>
             <NavBar />
             <HeroSection />
+            <ServiceOverview/>
             <LEIBenefitsOverview/>
             <LEIApplicationGuide/>
-            <ServiceOverview/>
             <AboutUs/>
             <AvailableCertifications/>
             <PricingSection/>

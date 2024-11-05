@@ -2,7 +2,7 @@ import CardImage from "../../../../assets/svg/CardImage"
 
 const LeiDetailCard = ({name, description}:{name:string,description:string}) => {
   return (
-    <div className="mb-16">
+    <div className="">
       <div className="flex gap-2 mb-2">
         <CardImage/>
         <h4 className="font-bold text-lg">{name}</h4>

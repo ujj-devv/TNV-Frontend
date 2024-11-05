@@ -1,20 +1,23 @@
 import { aboutUs } from "../../../util/data/aboutUs.data"
 import LargeHeader from "../../global/LargeHeader"
+import Layout from "../../global/Layout."
 import LeiDetailCard from "./components/LeiDetailCard"
 
 const AboutUs = () => {
   return (
-    <div className="p-32 flex gap-32">
-      <LargeHeader text={"About LEI International Pvt. Ltd"} className="text-[#373656] leading-[72px]" />
-      <div>
-      {
-        aboutUs.map(({ name, description }) => (
-          <LeiDetailCard key={name} name={name} description={description} />
-        ))
-      }
+    <>
+      <Layout customClass=" flex flex-col gap-16 md:flex-row md:gap-32 p-8 md:p-32">
+        <LargeHeader text={"About LEI International Pvt. Ltd"} className="text-[#373656] leading-[72px] text-center" />
+        <div className="flex flex-col gap-12">
+          {
+            aboutUs.map(({ name, description }) => (
+              <LeiDetailCard key={name} name={name} description={description} />
+            ))
+          }
 
-      </div>
-    </div>
+        </div>
+      </Layout>
+    </>
   )
 }
 

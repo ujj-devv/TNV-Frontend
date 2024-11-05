@@ -7,7 +7,7 @@ interface ApplyingCardProps {
 
 const ApplyingCard = ({ id, name, description }: ApplyingCardProps) => {
     return (
-        <div className="flex  overflow-hidden w-full">
+        <div className="flex overflow-hidden w-full">
             {/* Left side with ID */}
             <div className="text-8xl font-bold text-transparent flex items-center" style={{ WebkitTextStrokeWidth: '5px', WebkitTextStrokeColor: '#F3FAF8' }}>
                 {id}

@@ -2,7 +2,8 @@ import { ReactNode, MouseEvent } from "react"
 
 export enum ButtonType{
     PRIMARY = "primary",
-    SECONDARY = "secondary"
+    SECONDARY = "secondary",
+    WHITE_BG = "white-bg"
 }
 
 export type ButtonPropTypes = {

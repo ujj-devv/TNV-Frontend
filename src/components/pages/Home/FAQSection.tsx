@@ -1,20 +1,24 @@
 import { faq } from "../../../util/data/faq.data"
 import Accordion from "../../global/Accordian"
+import Layout from "../../global/Layout."
 import Button from "../../ui/Button/Button"
 import { ButtonType } from "../../ui/Button/button.types"
 
 const FAQSection = () => {
   return (
-    <div className="flex p-32 gap-8">
-      <h1 className="font-bold text-[64px] text-[#BED2E3]">Frequently asked questions</h1>
-      <div className="flex flex-col gap-16">
-        <div className="flex flex-col gap-12">
-          <Accordion accordionData={faq} />
+    <Layout>
+      <div className="flex flex-col md:flex-row p-8 md:p-16 lg:p-32 gap-8">
+        <div>
+          <h2 className="font-bold text-[64px] text-[#BED2E3]">Frequently asked questions</h2>
         </div>
-        <Button text={"VIEW MORE"} type={ButtonType.PRIMARY} customStyles="w-full" onClick={() => ""} />
+        <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-12">
+            <Accordion accordionData={faq} />
+          </div>
+          <Button text={"VIEW MORE"} type={ButtonType.PRIMARY} customStyles="w-full" onClick={() => ""} />
+        </div>
       </div>
-
-    </div>
+    </Layout>
   )
 }
 

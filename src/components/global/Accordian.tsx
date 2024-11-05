@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { AccordionItem } from "../../util/types/accordian.types";
-import CaretDown from "../../assets/svg/CaretDown";
-
-
+import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 
 type AccordionProps = {
   accordionData: AccordionItem[];
@@ -16,18 +14,18 @@ const Accordion = ({ accordionData }: AccordionProps) => {
   };
 
   return (
-    <div className="space-y-4 ">
+    <div className="space-y-4 mx-auto">
       {accordionData.map(({ key, name, content }, index) => (
-        <div key={key} className="border-b border-gray-300 w-full overflow-hidden"> 
+        <div key={key} className="border-b border-gray-300 w-full ">
           <button
             onClick={() => toggleAccordion(index)}
             className="flex justify-between items-center w-full py-4 text-left"
           >
-            <h3 className="text-[#9EA0A0] font-normal text-2xl">{name}</h3>
-            <span>{activeIndex === index ? "-" : <CaretDown />}</span>
+            <h3 className="text-[#9EA0A0] font-normal text-xl md:text-2xl">{name}</h3>
+            <span>{activeIndex === index ? <RxCaretUp /> : <RxCaretDown />}</span>
           </button>
           {activeIndex === index && (
-            <div className="p-4 text-gray-600 rounded-b-lg w-[550px]">
+            <div className="p-4 text-[#334155] rounded-b-lg w-full ">
               {content}
             </div>
           )}
