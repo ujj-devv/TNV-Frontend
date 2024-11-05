@@ -4,9 +4,9 @@ import LeiDetailCard from "./components/LeiDetailCard";
 
 const LEIBenefitsOverview = () => {
   return (
-    <div className="p-32">
+    <div className="px-32 pb-16">
       <Layout>
-        <div className="text-center mb-32">
+        <div className="text-center mb-16">
           <h1 className="font-bold text-5xl">Why your business needs an <span className="text-[#32736A]">LEI</span></h1>
         </div>
         <div className="flex gap-16 justify-between">

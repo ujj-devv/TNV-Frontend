@@ -5,7 +5,7 @@ import ApplyingCard from "./components/ApplyingCard"
 
 const LEIApplicationGuide = () => {
   return (
-    <div className="bg-[#32736A] p-32">
+    <div className="bg-[#32736A] px-32 py-16">
       <Layout>
         <div className="text-center">
           <h4 className="text-white text-xl font-medium mb-4">How it works</h4>

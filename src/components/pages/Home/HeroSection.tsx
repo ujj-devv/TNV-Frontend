@@ -6,9 +6,9 @@ import SearchBar from "../../ui/SearchBar/SearchBar"
 
 const HeroSection = () => {
   return (
-    <div className="bg-gradient-to-r from-custom-green1 via-custom-green2 to-custom-green3">
+    <div className="bg-gradient-to-r from-custom-green1 via-custom-green2 to-custom-green">
       <Layout>
-        <div className="flex flex-col md:flex-row justify-evenly py-32">
+        <div className="flex flex-col md:flex-row justify-evenly py-32 ">
           <div className="flex flex-col gap-8 justify-center mx-16">
             <LargeHeader text="Leading the Way in LEI Services for Global Corporates" className="text-white" />
             <Subheader text="Ensuring compliance, transparency, and global access with fast and secure LEI issuance." />

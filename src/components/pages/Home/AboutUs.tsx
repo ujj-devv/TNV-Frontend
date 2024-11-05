@@ -6,7 +6,7 @@ import LeiDetailCard from "./components/LeiDetailCard"
 const AboutUs = () => {
   return (
     <>
-      <Layout customClass=" flex flex-col gap-16 md:flex-row md:gap-32 p-8 md:p-32">
+      <Layout customClass=" flex flex-col gap-16 md:flex-row md:gap-32 p-8 md:px-32 md:py-16">
         <LargeHeader text={"About LEI International Pvt. Ltd"} className="text-[#373656] leading-[72px] text-center" />
         <div className="flex flex-col gap-12">
           {

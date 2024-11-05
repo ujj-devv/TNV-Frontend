@@ -11,14 +11,14 @@ const ServiceOverview = () => {
   const [hoveredDraftServiceKey, setHoveredDraftServiceKey] = useState<string>("");
 
   return (
-    <div className="p-32">
+    <div className="px-32 pt-16">
       <Layout>
-        <div className="text-center mb-32">
+        <div className="text-center mb-16">
           <LargeHeader text="What we offer" className="text-[#32736A]" />
         </div>
         
         {/* Section for 'services' with hover effect */}
-        <div className="flex gap-32 mb-32">
+        <div className="flex gap-32 mb-16">
           <div>
             {services.map(({ key, name, description, action }) => (
               <div
@@ -39,7 +39,7 @@ const ServiceOverview = () => {
         </div>
 
         {/* Section for 'draftServices' with hover effect */}
-        <div className="flex gap-32 mb-32">
+        <div className="flex gap-32 mb-16">
           <div className="p-0 flex justify-center md:justify-start">
             {/* Display the image of the currently hovered 'draftService', or a default image if none */}
             {hoveredDraftServiceKey !== ""

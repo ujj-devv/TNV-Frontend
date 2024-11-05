@@ -18,7 +18,7 @@ const PricingSection = () => {
 
   return (
     <>
-      <div className="text-center mb-8 p-8  md:mb-32 md:p-32 bg-[#F3FAF8]">
+      <div className="text-center mb-8 p-8 md:px-32 md:py-16 bg-[#F3FAF8]">
         <Layout>
           <h1 className="font-bold text-5xl text-[#2A5B55] mb-4">Simple and <span className="text-[#D8EFE9]">transparent</span> pricing</h1>
           <p className="text-[#9EA0A0] font-normal text-base mb-20">TNV LEI enables you to apply for a code
@@ -29,13 +29,15 @@ const PricingSection = () => {
           <p className="text-[#0F172A] font-medium text-xl">NO HIDDEN FEES! ALL FEES ARE INCLUDED IN OUR LEI PRICE, GST WILL BE ADDED.</p>
         </Layout>
       </div>
-      <div className="flex justify-center md:justify-end gap-4 px-32">
+      <div className="px-32">
         <Layout>
-          <ButtonGroup buttons={buttons} setActiveButton={setActiveButton} activeButton={activeButton} />
+          <div className="flex justify-center md:justify-end gap-4">
+            <ButtonGroup buttons={buttons} setActiveButton={setActiveButton} activeButton={activeButton} />
+          </div>
         </Layout>
       </div>
       <Layout>
-        <div className="flex flex-col md:flex-row gap-12 px-32 py-16">
+        <div className="flex flex-col md:flex-row gap-12 px-32 py-8">
           {
             activeButton === 1 ? applicationPricing.map(({ key, duration, price, total, features }) => (
               <PricingCard
