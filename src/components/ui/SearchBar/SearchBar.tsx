@@ -3,7 +3,7 @@ import { ButtonType } from "../Button/button.types"
 
 const SearchBar = ({placeholder}:{placeholder:string}) => {
     return (
-        <div className="flex items-center max-w-md bg-white p-4 border-1 rounded-lg shadow-md overflow-hidden">
+        <div className="flex items-center w-full bg-white p-4 border-1 rounded-lg shadow-md overflow-hidden">
             <input
                 type="text"
                 className="w-full text-gray-700 focus:outline-none"

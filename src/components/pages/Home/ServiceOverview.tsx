@@ -30,7 +30,7 @@ const ServiceOverview = () => {
             ))}
           </div>
 
-          <div className="p-0 flex justify-center md:justify-start">
+          <div className="p-0 justify-center hidden md:block">
             {/* Display the image of the currently hovered 'service', or a default image if none */}
             {hoveredServiceKey !== ""
               ? services.find(service => service.key === hoveredServiceKey)?.image()
@@ -40,7 +40,7 @@ const ServiceOverview = () => {
 
         {/* Section for 'draftServices' with hover effect */}
         <div className="flex gap-32 mb-16">
-          <div className="p-0 flex justify-center md:justify-start">
+          <div className="p-0 justify-center hidden md:block">
             {/* Display the image of the currently hovered 'draftService', or a default image if none */}
             {hoveredDraftServiceKey !== ""
               ? draftServices.find(draft => draft.key === hoveredDraftServiceKey)?.image()

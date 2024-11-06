@@ -5,7 +5,7 @@ const Button = ({ text, type, icon, customStyles, isActive = true, onClick }: Bu
     const secondaryStyle = 'text-[#32736A] font-semibold text-lg'
     const whiteBgButtonStyle = "bg-white text-[#32736A] text-base font-normal rounded-lg py-2 px-4"
 
-    const buttonStyles = `${type === ButtonType.PRIMARY ? primaryStyle : ButtonType.WHITE_BG ? whiteBgButtonStyle: secondaryStyle} flex items-center justify-between gap-3`
+    const buttonStyles = `${type === ButtonType.PRIMARY ? primaryStyle : ButtonType.WHITE_BG ? whiteBgButtonStyle: secondaryStyle} flex items-center justify-center gap-3`
     return (
         <button className={`${customStyles} ${buttonStyles} `} onClick={onClick}>
             {text}

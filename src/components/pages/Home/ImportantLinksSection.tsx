@@ -21,7 +21,7 @@ const ImportantLinksSection = () => {
               ))}
             </div>
           </div>
-          <div className="self-start md:self-end w-full md:w-auto">
+          <div className="flex justify-center md:self-end w-1/2 ">
             <SearchBar placeholder="Search LEIs by entity name / LEI number" />
           </div>
         </div>
