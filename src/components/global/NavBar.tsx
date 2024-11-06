@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#32736A]"> {/* Fixed navbar */}
+    <div className="bg-[#32736A]"> {/* Fixed navbar */}
       <Layout>
         <div className="flex justify-between items-center py-4">
           <div className="flex gap-8 mx-16 md:mx-auto">
