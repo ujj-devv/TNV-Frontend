@@ -1,9 +1,20 @@
 
+import { LeiAttributes } from "../../../store/api/types/LeiRecords.types";
+import { TablePropTypes } from "./table.types";
 
-const Table = ({ columns, data, rowKey, onRowClick, customStyles, pagination }) => {
 
+export type LeiTableDataType = {
+  id: string;
+  lei: string;
+  legalName: string;
+  status: string;
+  country: string;
+}
+
+const Table = ({ columns, data, rowKey, onRowClick, customStyles }:TablePropTypes) => {
+  console.log(rowKey)
   return (
-    <div className={`overflow-x-auto ${customStyles?.container || ""}`}>
+    <div className={`overflow-x-auto ${customStyles?.container  || ""}`}>
       <table className={`min-w-full border-collapse ${customStyles?.table || ""}`}>
         {/* Table Header */}
         <thead>
@@ -21,20 +32,22 @@ const Table = ({ columns, data, rowKey, onRowClick, customStyles, pagination }) 
 
         {/* Table Body */}
         <tbody>
-          {data.map((row, rowIndex) => (
+          {data?.map((row, rowIndex) => (
             <tr
-              key={row[rowKey] || rowIndex}
+              key={ rowIndex}
               className={`${customStyles?.row || "border-b hover:bg-gray-100 cursor-pointer"}`}
-              onClick={() => onRowClick(row)}
+              onClick={() => onRowClick(row as LeiAttributes)}
             >
-              {columns.map((column) => (
+              {columns.map((column) => {
+                console.log(row );
+                return(
                 <td
                   key={column.key}
                   className={`px-4 py-2 ${customStyles?.cell || "text-gray-600"}`}
                 >
-                  {column.render ? column.render(row[column.key], row) : row[column.key]}
+                  {row[column.key] }
                 </td>
-              ))}
+              )})}
             </tr>
           ))}
         </tbody>

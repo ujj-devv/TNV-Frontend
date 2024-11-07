@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { LeiRecord, LeiRecordParamsType } from "../types/LeiRecords.types";
+import { LeiMain, LeiRecordParamsType } from "../types/LeiRecords.types";
 
 
 export const leiRecordsApi = createApi({
@@ -8,7 +8,7 @@ export const leiRecordsApi = createApi({
     baseUrl: import.meta.env.VITE_APP_BASE_URL, // Base URL from environment
   }),
   endpoints: (builder) => ({
-    getLeiRecords: builder.query<LeiRecord[], LeiRecordParamsType>({
+    getLeiRecords: builder.query<LeiMain, LeiRecordParamsType>({
       query: ({searchTerm, countryCode}) => ({
         url: "",
         params: {

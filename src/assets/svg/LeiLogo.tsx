@@ -9,7 +9,7 @@ const LeiLogo = ({ color = "#000", width = "150", height = "", ...props }) => (
       width={width}
       height={height}
       style={{
-        enableBackground: "new 0 0 1080 1080",
+        // enableBackground: "new 0 0 1080 1080",
       }}
       xmlSpace="preserve"
       {...props}

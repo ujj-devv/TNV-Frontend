@@ -22,7 +22,7 @@ const ImportantLinksSection = () => {
             </div>
           </div>
           <div className="flex justify-center md:self-end w-1/2 ">
-            <SearchBar placeholder="Search LEIs by entity name / LEI number" />
+            <SearchBar placeholder="Search LEIs by entity name / LEI number" onClick={() => ""} onChange={() => ""} />
           </div>
         </div>
       </Layout>

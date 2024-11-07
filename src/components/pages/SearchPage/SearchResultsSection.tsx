@@ -23,7 +23,7 @@ const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
 
     const simplifyLeiRecords = (records:LeiRecord[]) => {
         return records.map(record => ({
-            id: record.id, // Include the id here for reference
+            id: record.id, 
             lei: record?.attributes?.lei,
             legalName: record?.attributes?.entity?.legalName?.name,
             status: record?.attributes?.entity?.status,
@@ -33,10 +33,10 @@ const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
 
     const findRecordWithLeiId = (records:LeiRecord[], id:string) => records.find((record) => record.id === id);
 
-    const paginatedData = data ? simplifyLeiRecords(data?.data ).slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
+    const paginatedData = data ? simplifyLeiRecords(data?.data as LeiRecord[] ).slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
 
     const handleRowClick = (row:LeiAttributes) => {
-        const fullRecord = findRecordWithLeiId(data.data, row.lei);
+        const fullRecord = findRecordWithLeiId(data?.data as LeiRecord[], row.lei);
         navigate(`/view/${row.lei}`, { state: { rowData: fullRecord } });
     };
 
