@@ -12,7 +12,7 @@ const SearchBar = ({placeholder, value, customClass, onClick, onChange}:SearchBa
         }
       };
     return (
-        <div className={`flex items-center w-full bg-white p-4 border-1 rounded-lg shadow-md overflow-hidden ${customClass}`}>
+        <div className={`flex items-center w-full bg-white p-2 border-1 rounded-lg shadow-md overflow-hidden ${customClass}`}>
             <input
                 type="text"
                 className="w-full text-gray-700 focus:outline-none"

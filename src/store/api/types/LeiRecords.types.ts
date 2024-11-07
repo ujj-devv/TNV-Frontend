@@ -127,3 +127,8 @@ export  type RegisteredAt = {
     self: string;
   };
   
+  export type LeiRecordParamsType = {
+    searchTerm:string,
+    countryCode?:string
+  }
+  

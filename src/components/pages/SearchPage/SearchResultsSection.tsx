@@ -4,10 +4,11 @@ import Table from "../../ui/Table/Table";
 import Layout from "../../global/Layout.";
 import { useGetLeiRecordsQuery } from "../../../store/api/glief/lei-records.slice";
 import Skeleton from "react-loading-skeleton";
+import { LeiAttributes, LeiRecord, LeiRecordParamsType } from "../../../store/api/types/LeiRecords.types";
 
-const SearchResultsSection = ({ searchedData = [] }) => {
-    const { data, error, isLoading } = useGetLeiRecordsQuery();
-    console.log('data, error, isLoading from api', data, error, isLoading);
+const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
+    const { data, error, isLoading } = useGetLeiRecordsQuery(query);
+    console.log('data, error, isLoading, searchedData from api', data, error, isLoading, query);
     const navigate = useNavigate();
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +21,7 @@ const SearchResultsSection = ({ searchedData = [] }) => {
         { key: "status", label: "Registration Status" },
     ];
 
-    const simplifyLeiRecords = (records) => {
+    const simplifyLeiRecords = (records:LeiRecord[]) => {
         return records.map(record => ({
             id: record.id, // Include the id here for reference
             lei: record?.attributes?.lei,
@@ -30,12 +31,12 @@ const SearchResultsSection = ({ searchedData = [] }) => {
         }));
     };
 
-    const findRecordWithLeiId = (records, id) => records.find((record) => record.id === id);
+    const findRecordWithLeiId = (records:LeiRecord[], id:string) => records.find((record) => record.id === id);
 
-    const paginatedData = data ? simplifyLeiRecords(data.data).slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
+    const paginatedData = data ? simplifyLeiRecords(data?.data ).slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
 
-    const handleRowClick = (row) => {
-        const fullRecord = findRecordWithLeiId(data.data, row.id);
+    const handleRowClick = (row:LeiAttributes) => {
+        const fullRecord = findRecordWithLeiId(data.data, row.lei);
         navigate(`/view/${row.lei}`, { state: { rowData: fullRecord } });
     };
 
