@@ -1,15 +1,12 @@
+import { DetailCardProps } from "./detail-card.types";
 
-type DetailCardProps = {
-    data: Record<string, string | number | boolean | JSX.Element>; // Object with keys as strings and values as string, number, boolean or JSX elements
-};
-
-const DetailCard = ({ data }: DetailCardProps) => {
+const DetailCard = ({ data, detailName }: DetailCardProps) => {
     return (
         <div className="border rounded-lg shadow-lg w-full mx-auto">
             <div className="mb-2 p-4 rounded-t-lg shadow w-full bg-[#32736A]">
-                <h2 className="text-2xl text-white font-semibold ">Detail Card</h2>
+                <h2 className="text-2xl text-white font-semibold uppercase">{detailName}</h2>
             </div>
-            {/* Render rows of key-value pairs */}
+           
             <div className="space-y-4 p-4 ">
                 {Object.entries(data).map(([key, value], index) => (
                     <div key={index} className="flex justify-between">

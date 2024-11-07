@@ -1,17 +1,6 @@
-import { useNavigate } from "react-router-dom";
+
 
 const Table = ({ columns, data, rowKey, onRowClick, customStyles, pagination }) => {
-  const navigate = useNavigate(); // Use React Router's navigate function
-  
-  // Function to handle row click and navigate to a specific route
-  const handleRowClick = (row) => {
-    if (onRowClick) {
-      const path = onRowClick(row); // Get dynamic path from parent component
-      if (path) {
-        navigate(path); // Navigate to the provided path
-      }
-    }
-  };
 
   return (
     <div className={`overflow-x-auto ${customStyles?.container || ""}`}>
@@ -36,7 +25,7 @@ const Table = ({ columns, data, rowKey, onRowClick, customStyles, pagination }) 
             <tr
               key={row[rowKey] || rowIndex}
               className={`${customStyles?.row || "border-b hover:bg-gray-100 cursor-pointer"}`}
-              onClick={() => handleRowClick(row)}
+              onClick={() => onRowClick(row)}
             >
               {columns.map((column) => (
                 <td

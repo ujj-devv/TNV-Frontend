@@ -4,6 +4,8 @@ import Button from "../ui/Button/Button";
 import { ButtonType } from "../ui/Button/button.types";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Layout from "./Layout.";
+// import LeiLogo from "../../assets/svg/LeiLogo";
+
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false); 
@@ -13,10 +15,16 @@ const NavBar = () => {
   };
 
   return (
-    <div className="bg-[#32736A]"> {/* Fixed navbar */}
+    <div className="bg-[#32736A]"> 
       <Layout>
         <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          {/* <div className="h-[15px]">
+
+          <LeiLogo color="white"/>
+          </div> */}
           <div className="flex gap-8 mx-16 md:mx-auto">
+
             {/* Hamburger Menu Icon */}
             <button className="md:hidden " onClick={toggleMenu}>
               <RxHamburgerMenu className="text-white text-2xl" />
