@@ -1,15 +1,5 @@
+import { LeiTableDataType, TablePropTypes } from "./table.types";
 
-import { LeiAttributes } from "../../../store/api/types/LeiRecords.types";
-import { TablePropTypes } from "./table.types";
-
-
-export type LeiTableDataType = {
-  id: string;
-  lei: string;
-  legalName: string;
-  status: string;
-  country: string;
-}
 
 const Table = ({ columns, data, rowKey, onRowClick, customStyles }:TablePropTypes) => {
   console.log(rowKey)
@@ -36,7 +26,7 @@ const Table = ({ columns, data, rowKey, onRowClick, customStyles }:TablePropType
             <tr
               key={ rowIndex}
               className={`${customStyles?.row || "border-b hover:bg-gray-100 cursor-pointer"}`}
-              onClick={() => onRowClick(row as LeiAttributes)}
+              onClick={() => onRowClick(row)}
             >
               {columns.map((column) => {
                 console.log(row );
@@ -45,7 +35,7 @@ const Table = ({ columns, data, rowKey, onRowClick, customStyles }:TablePropType
                   key={column.key}
                   className={`px-4 py-2 ${customStyles?.cell || "text-gray-600"}`}
                 >
-                  {row[column.key] }
+                  {row[column.key as keyof LeiTableDataType] }
                 </td>
               )})}
             </tr>

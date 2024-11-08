@@ -1,4 +1,4 @@
-import { LeiAttributes } from "../../../store/api/types/LeiRecords.types";
+// import { LeiAttributes } from "../../../store/api/types/LeiRecords.types";
 
 export type LeiTableDataType = {
     id: string;
@@ -10,9 +10,9 @@ export type LeiTableDataType = {
 
 export type TablePropTypes = {
   columns: TableColumn[];
-  data: unknown[];
+  data: LeiTableDataType[];
   rowKey: unknown; // rowKey should match a key in LeiAttributes
-  onRowClick: (row: LeiAttributes) => void;
+  onRowClick: (row: LeiTableDataType) => void;
   customStyles: TableCustomStyles;
   pagination: unknown;
 };

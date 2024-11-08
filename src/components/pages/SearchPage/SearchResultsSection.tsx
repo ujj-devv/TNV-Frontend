@@ -4,7 +4,8 @@ import Table from "../../ui/Table/Table";
 import Layout from "../../global/Layout.";
 import { useGetLeiRecordsQuery } from "../../../store/api/glief/lei-records.slice";
 import Skeleton from "react-loading-skeleton";
-import { LeiAttributes, LeiRecord, LeiRecordParamsType } from "../../../store/api/types/LeiRecords.types";
+import {  LeiRecord, LeiRecordParamsType } from "../../../store/api/types/LeiRecords.types";
+import { LeiTableDataType } from "../../ui/Table/table.types";
 
 const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
     const { data, error, isLoading } = useGetLeiRecordsQuery(query);
@@ -31,11 +32,14 @@ const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
         }));
     };
 
-    const findRecordWithLeiId = (records:LeiRecord[], id:string) => records.find((record) => record.id === id);
+    const findRecordWithLeiId = (records: LeiRecord[], id: string): LeiRecord | undefined => {
+        return records.find((record) => record.id === id);
+      };
+      
 
-    const paginatedData = data ? simplifyLeiRecords(data?.data as LeiRecord[] ).slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
+    const paginatedData:LeiTableDataType[] = data ? simplifyLeiRecords(data?.data as LeiRecord[] ).slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
 
-    const handleRowClick = (row:LeiAttributes) => {
+    const handleRowClick = (row:LeiTableDataType) => {
         const fullRecord = findRecordWithLeiId(data?.data as LeiRecord[], row.lei);
         navigate(`/view/${row.lei}`, { state: { rowData: fullRecord } });
     };
