@@ -4,12 +4,16 @@ import Layout from "../../global/Layout.";
 
 
 const simplifyLeiEntityRecords = (record: LeiRecord) => {
+    // eslint-disable-next-line no-unsafe-optional-chaining
     const {legalName, legalAddress, headquartersAddress, category, status, creationDate} = record?.attributes?.entity
+    // eslint-disable-next-line no-unsafe-optional-chaining
     const {validatedAt, validatedAs} = record?.attributes?.registration
     return {
         legalName: legalName?.name,
         languageCode: legalName?.language,
+        // eslint-disable-next-line no-unsafe-optional-chaining
         legalAddress: [...legalAddress?.addressLines, legalAddress?.city],
+        // eslint-disable-next-line no-unsafe-optional-chaining
         headquartersAddress: [...headquartersAddress?.addressLines,
         headquartersAddress?.city, headquartersAddress?.country,
         headquartersAddress?.postalCode
@@ -56,7 +60,7 @@ const AllDetailsSection = ({ details }: { details: LeiRecord }) => {
         <div className="mb-16">
             <Layout>
                 <div className="flex flex-col gap-16 mx-16 md:mx-32">
-                    <DetailCard data={simplifyLeiEntityRecords(details)} detailName={"Entity"} />
+                    <DetailCard data={simplifyLeiEntityRecords(details) as unknown as Record<string, string | number | boolean | JSX.Element>} detailName={"Entity"} />
                     <DetailCard data={simplifyLeiRelationshipRecords(details?.relationships)} detailName={"Relationship"} />
                     <DetailCard data={simplifyLeiRegistrationRecords(details?.attributes?.registration)} detailName={"Registration"} />
                 </div>
