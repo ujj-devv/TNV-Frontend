@@ -11,7 +11,6 @@ import MuiSelect from "../../ui/Select/MuiSelect";
 import { SelectChangeEvent } from "@mui/material";
 
 
-
 const SearchAndFilter = ({ queryString, onSelectChange, selectedFilter }: SearchAndFilterPropType) => {
     const [isFilter, setIsFilter] = useState(false);
     const [searchValue, setSearchValue] = useState(queryString)

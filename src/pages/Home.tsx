@@ -15,15 +15,15 @@ const Home = () => {
         <>
             <NavBar />
             <HeroSection />
-            <ServiceOverview/>
-            <LEIBenefitsOverview/>
-            <LEIApplicationGuide/>
-            <AboutUs/>
-            <AvailableCertifications/>
-            <PricingSection/>
-            <FAQSection/>
-            <ImportantLinksSection/>
-            <Footer/>
+            <ServiceOverview />
+            <LEIBenefitsOverview />
+            <LEIApplicationGuide />
+            <AboutUs />
+            <AvailableCertifications />
+            <PricingSection />
+            <FAQSection />
+            <ImportantLinksSection />
+            <Footer />
         </>
     )
 }
