@@ -1,8 +1,9 @@
+import LoginForm from "../../../global/Forms/LoginForm"
 
 const Login = () => {
   return (
     <div>
-      Login
+      <LoginForm/>
     </div>
   )
 }

@@ -7,11 +7,15 @@ import NotFound from "../pages/NotFound";
 
 export const router = createBrowserRouter([
   {
+    path: "*", 
+    element: <NotFound />, 
+  },
+  {
     path: "/",
     element: <Home />,
   },
   {
-    path: "/:authType(login|register)", // Match only 'login' or 'register' for authType
+    path: "/:authType",
     element: <Auth />,
   },
   {
@@ -21,9 +25,5 @@ export const router = createBrowserRouter([
   {
     path: "/view/:id",
     element: <ViewDetailsPage />
-  },
-  {
-    path: "*", 
-    element: <NotFound />, 
   },
 ]);
