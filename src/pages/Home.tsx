@@ -11,21 +11,22 @@ import ServiceOverview from "../components/pages/Home/ServiceOverview";
 import ImportantLinksSection from "../components/pages/Home/ImportantLinksSection";
 
 const Home = () => {
-  return (
-    <>
-      <NavBar />
-      <HeroSection />
-      <ServiceOverview />
-      <LEIBenefitsOverview />
-      <LEIApplicationGuide />
-      <AboutUs />
-      <AvailableCertifications />
-      <PricingSection />
-      <FAQSection />
-      <ImportantLinksSection />
-      <Footer />
-    </>
-  );
+   
+    return (
+        <>
+            <NavBar />
+            <HeroSection />
+            <ServiceOverview />
+            <LEIBenefitsOverview />
+            <LEIApplicationGuide />
+            <AboutUs />
+            <AvailableCertifications />
+            <PricingSection />
+            <FAQSection />
+            <ImportantLinksSection />
+            <Footer />
+        </>
+    );
 };
 
 export default Home;

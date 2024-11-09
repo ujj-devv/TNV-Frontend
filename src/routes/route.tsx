@@ -5,7 +5,7 @@ import ViewDetailsPage from "../pages/ViewDetailsPage";
 import AboutUs from "../components/pages/Home/AboutUs";
 import LOUDataAnalytics from "../components/pages/Home/LOUDataAnalytics";
 import Faq from "../components/pages/Home/Faq";
-import About from "../components/pages/Home/about";
+import About from "../components/pages/Home/About";
 
 export const router = createBrowserRouter([
   {
