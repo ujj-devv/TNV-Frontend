@@ -29,31 +29,15 @@ const RegisterForm = () => {
         console.log('values are', values)
     }
     return (
-        <div className="m-32 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
             <Formik
                 initialValues={initialValues}
-                // validate={values => {
-                //     const errors = {};
-                //     if (!values.email) {
-                //         errors.email = 'Required';
-                //     } else if (
-                //         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                //     ) {
-                //         errors.email = 'Invalid email address';
-                //     }
-                //     return errors;
-                // }}
                 onSubmit={(values) => onSubmit(values)}
             >
                 {({
                     values,
-                    errors,
-                    touched,
                     handleChange,
-                    handleBlur,
                     handleSubmit,
-                    isSubmitting,
-                    /* and other goodies */
                 }) => (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                         <MuiInput
@@ -128,6 +112,7 @@ const RegisterForm = () => {
                         Sign In
                     </NavLink></p>
             </div>
+
         </div>
     )
 }
