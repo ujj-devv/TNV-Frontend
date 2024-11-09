@@ -2,7 +2,6 @@ import { LeiTableDataType, TablePropTypes } from "./table.types";
 
 
 const Table = ({ columns, data, rowKey, onRowClick, customStyles }:TablePropTypes) => {
-  console.log(rowKey)
   return (
     <div className={`overflow-x-auto ${customStyles?.container  || ""}`}>
       <table className={`min-w-full border-collapse ${customStyles?.table || ""}`}>
@@ -29,7 +28,6 @@ const Table = ({ columns, data, rowKey, onRowClick, customStyles }:TablePropType
               onClick={() => onRowClick(row)}
             >
               {columns.map((column) => {
-                console.log(row );
                 return(
                 <td
                   key={column.key}

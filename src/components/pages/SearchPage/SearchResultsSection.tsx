@@ -66,7 +66,7 @@ const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
                                 table: "text-left",
                                 headerRow: "bg-[#32736A]",
                                 headerCell: "text-white font-bold",
-                                row: "hover:bg-blue-50 cursor-pointer",
+                                row: "hover:bg-[#F3FAF8] cursor-pointer",
                                 cell: "text-gray-800"
                             }}
                             pagination={{

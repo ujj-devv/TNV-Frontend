@@ -4,19 +4,25 @@ import Layout from "../../global/Layout.";
 import Filter from "../../ui/Filter/Filter";
 import SearchBar from "../../ui/SearchBar/SearchBar";
 import countries from "../../../util/data/countries.json";
-import { SelectedFilterType } from "../../../util/types/filter.types";
+import { SearchAndFilterPropType } from "./types/search-page.types";
+import { SelectOptionsType } from "../../ui/Select/select.types";
+import { filterTypesArray } from "../../../util/data/select.data";
+import MuiSelect from "../../ui/Select/MuiSelect";
+import { SelectChangeEvent } from "@mui/material";
 
-type SearchAndFilterPropType = {
-    queryString: string,
-    onSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void,
-    selectedFilter: SelectedFilterType
-}
 
 const SearchAndFilter = ({ queryString, onSelectChange, selectedFilter }: SearchAndFilterPropType) => {
     const [isFilter, setIsFilter] = useState(false);
     const [searchValue, setSearchValue] = useState(queryString)
-
     console.log('selectedFilter', selectedFilter)
+
+    const countryArray: SelectOptionsType[] = countries.map(({ name, countryCode }) => {
+        return {
+            name,
+            value: countryCode
+        }
+    })
+
     return (
         <div className="bg-[#F3FAF8] mb-16">
             <Layout>
@@ -32,36 +38,37 @@ const SearchAndFilter = ({ queryString, onSelectChange, selectedFilter }: Search
                             <SearchBar
                                 placeholder=""
                                 value={searchValue}
-                                onChange={(e) => setSearchValue(e.target.value)} 
+                                onChange={(e) => setSearchValue(e.target.value)}
                                 onClick={() => ""}
                             />
                         </div>
                         <Filter onClick={() => setIsFilter(true)} />
-                        {isFilter && (
-                            <select
-                                name="filterType"
-                                value={selectedFilter.filterType}
-                                onChange={(e) => onSelectChange(e)}
-                            >
-                                <option value="">Select Filter</option>
-                                <option value="country">Country</option>
-                                <option value="lei">LEI number</option>
-                            </select>
-                        )}
-                        {selectedFilter.filterType === "country" && (
-                            <select
-                                name="value"
-                                value={selectedFilter.value}
-                                onChange={(e) => onSelectChange(e)}
-                            >
-                                <option value="">Select Country</option>
-                                {countries.map(({ name, countryCode }) => (
-                                    <option key={countryCode} value={countryCode}>
-                                        {name}
-                                    </option>
-                                ))}
-                            </select>
-                        )}
+                        <div className="flex gap-4 flex-col md:flex-row">
+                            {isFilter && (
+                                <div className="w-full md:w-1/3">
+                                    <MuiSelect
+                                        label={"Filter Type"}
+                                        name="filterType"
+                                        value={selectedFilter.filterType}
+                                        onChange={(event, child) => onSelectChange(event as SelectChangeEvent<string>, child)}
+                                        options={filterTypesArray}
+                                    />
+                                </div>
+
+
+                            )}
+                            {selectedFilter.filterType === "country" && (
+                                <div className="w-full md:w-1/3">
+                                    <MuiSelect
+                                        label={"Select Country"}
+                                        name="value"
+                                        value={selectedFilter.value}
+                                        onChange={(event, child) => onSelectChange(event as SelectChangeEvent<string>, child)}
+                                        options={countryArray}
+                                    />
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </Layout>
