@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import SearchPage from "../pages/SearchPage";
 import ViewDetailsPage from "../pages/ViewDetailsPage";
+import Auth from "../pages/Auth/Auth";
+import NotFound from "../pages/NotFound";
 import AboutUs from "../components/pages/Home/AboutUs";
 import Faq from "../components/pages/Home/Faq";
 import About from "../components/pages/Home/About";
@@ -15,8 +17,16 @@ import Cdf from "../components/pages/Home/Cdf";
 
 export const router = createBrowserRouter([
   {
+    path: "*", 
+    element: <NotFound />, 
+  },
+  {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/:authType",
+    element: <Auth />,
   },
   {
     path: "/search/:queryString",

@@ -3,13 +3,14 @@ import { CheckboxPropType } from "./checkbox.types";
 
 const MuiCheckbox = ({
     label, isDisabled, labelPlacement, handleChange, isChecked,
-    isIndeterminate, isRequired, error, errorMessage, defaultChecked
+    isIndeterminate, isRequired, error, errorMessage, defaultChecked, name
 }: CheckboxPropType) => {
     return (
-        <FormControl required={isRequired} error={true} component="fieldset">
+        <FormControl required={isRequired} error={true} component="fieldset" >
             <FormControlLabel
                 control={
                     <Checkbox
+                        name={name}
                         defaultChecked={defaultChecked}
                         checked={isChecked}
                         indeterminate={isIndeterminate}

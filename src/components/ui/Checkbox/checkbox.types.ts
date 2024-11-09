@@ -12,4 +12,5 @@ export type CheckboxPropType = {
     error?: boolean;
     errorMessage?: string;
     defaultChecked?:boolean
+    name:string
 }
