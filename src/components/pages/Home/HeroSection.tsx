@@ -21,7 +21,10 @@ const HeroSection = () => {
       <Layout>
         <div className="flex flex-col md:flex-row justify-evenly py-32">
           <div className="flex flex-col gap-8 justify-center mx-16">
-            <LargeHeader text="Leading the Way in LEI Services for Global Corporates" className="text-white" />
+            <LargeHeader
+              text="Leading the Way in LEI Services for Global Corporates"
+              className="text-white"
+            />
             <Subheader text="Ensuring compliance, transparency, and global access with fast and secure LEI issuance." />
             <SearchBar
               placeholder="Search LEIs by entity name / LEI number"

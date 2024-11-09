@@ -4,7 +4,6 @@ import Button from "../ui/Button/Button";
 import { ButtonType } from "../ui/Button/button.types";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Layout from "./Layout.";
-import { NavLink } from "react-router-dom";
 // import LeiLogo from "../../assets/svg/LeiLogo";
 
 const NavBar = () => {
@@ -17,35 +16,59 @@ const NavBar = () => {
   return (
     <div className="bg-[#32736A]">
       <Layout>
-        <div className="flex justify-between items-center py-4">
+        {" "}
+        <nav className=" text-white px-4 py-2 flex justify-between items-center">
           {/* Logo */}
-          {/* <div className="h-[15px]">
-
-          <LeiLogo color="white"/>
-          </div> */}
-          <div className="flex gap-8 mx-16 md:mx-auto">
-            {/* Hamburger Menu Icon */}
-            <button className="md:hidden " onClick={toggleMenu}>
-              <RxHamburgerMenu className="text-white text-2xl" />
-            </button>
-            {/* {navlinks.map(({ name, id }) => (
-              <div  key={id}>
-                {name}
-              </div>
-            ))} */}
-
-            {navlinks.map((link) => (
-              <ul key={link.id}>
-                <NavLink
-                  to={`/${link.id}`}
-                  className="text-white font-medium text-base hidden md:block" // Optional: Add an active class for styling
-                >
-                  {link.name}
-                </NavLink>
-              </ul>
-            ))}
+          <div className="flex items-center">
+            <img
+              src="https://dev.tnvlei.com/logo-dark.png"
+              alt="Logo"
+              className="h-8"
+            />
           </div>
-          <div className="hidden md:flex md:gap-4 md:mx-16">
+
+          {/* Desktop Navigation Links */}
+          <ul className="hidden md:flex space-x-6">
+            <li>
+              <a href="/" className="hover:text-gray-400">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/cdf-downloads" className="hover:text-gray-400">
+                CDF Downloads
+              </a>
+            </li>
+            <li>
+              <a href="/faq" className="hover:text-gray-400">
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="/coming-soon" className="hover:text-gray-400">
+                LOU Data Analytics
+              </a>
+            </li>
+            <li>
+              <a href="/profile-management" className="hover:text-gray-400">
+                Profile Management
+              </a>
+            </li>
+            <li>
+              <a href="/about" className="hover:text-gray-400">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="/contact" className="hover:text-gray-400">
+                Contact
+              </a>
+            </li>
+          </ul>
+
+          {/* Authentication Buttons */}
+          <div className="hidden md:flex space-x-4">
             <Button
               type={ButtonType.PRIMARY}
               text="Sign in"
@@ -57,25 +80,63 @@ const NavBar = () => {
               onClick={() => ""}
             />
           </div>
-        </div>
 
-        {/* Dropdown Menu for smaller screens */}
-        {isOpen && (
-          <div className="flex flex-col bg-[#32736A] md:hidden">
-            {navlinks.map(({ name, id }) => (
-              <div
-                className="text-white font-medium text-base py-2 mx-12 px-4 hover:bg-[#2B5B55] cursor-pointer"
-                key={id}
-              >
-                {name}
-              </div>
-            ))}
-            <div className="flex flex-col gap-4 py-4 px-4 mx-12">
+          {/* Hamburger Icon for Mobile */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+              ☰
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          <div
+            className={`md:hidden ${
+              isOpen ? "block" : "hidden"
+            } absolute top-0 left-0 right-0   text-white p-4`}
+          >
+            <ul className="space-y-4">
+              <li>
+                <a href="/" className="hover:text-gray-400">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/cdf-downloads" className="hover:text-gray-400">
+                  CDF Downloads
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="hover:text-gray-400">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="/coming-soon" className="hover:text-gray-400">
+                  LOU Data Analytics
+                </a>
+              </li>
+              <li>
+                <a href="/profile-management" className="hover:text-gray-400">
+                  Profile Management
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-gray-400">
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a href="/contact" className="hover:text-gray-400">
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <div className="mt-4 space-y-2">
               <Button
                 type={ButtonType.PRIMARY}
                 text="Sign in"
                 onClick={() => ""}
-                customStyles="w-full"
               />
               <Button
                 type={ButtonType.WHITE_BG}
@@ -84,7 +145,7 @@ const NavBar = () => {
               />
             </div>
           </div>
-        )}
+        </nav>
       </Layout>
     </div>
   );
