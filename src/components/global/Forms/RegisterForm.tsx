@@ -3,6 +3,9 @@ import MuiInput from "../../ui/Input/MuiInput";
 import { InputType, InputVariant } from "../../ui/Input/input.enums";
 import Button from "../../ui/Button/Button";
 import { ButtonType } from "../../ui/Button/button.types";
+import MuiCheckbox from "../../ui/Checkbox/MuiCheckbox";
+import TermsRedirectNode from "../../pages/Auth/Register/TermsRedirectNode";
+import { NavLink } from "react-router-dom";
 
 type formValuesType = {
     firstName: string,
@@ -22,11 +25,11 @@ const initialValues = {
 
 const RegisterForm = () => {
 
-    const onSubmit = (values:formValuesType) => {
+    const onSubmit = (values: formValuesType) => {
         console.log('values are', values)
     }
     return (
-        <div className="m-32">
+        <div className="m-32 flex flex-col gap-6">
             <Formik
                 initialValues={initialValues}
                 // validate={values => {
@@ -101,8 +104,14 @@ const RegisterForm = () => {
                             placeholder={"Enter your password"}
                             required
                         />
+                        <MuiCheckbox
+                            isChecked={values.termsAndCondition}
+                            handleChange={handleChange}
+                            label={<TermsRedirectNode />}
+                            name="termsAndCondition"
+                        />
                         <Button
-                            text={"Submit"}
+                            text={"Create An Account"}
                             type={ButtonType.PRIMARY}
                             onClick={() => ""}
                         />
@@ -110,6 +119,15 @@ const RegisterForm = () => {
                     </form>
                 )}
             </Formik>
+            <div className="text-[#9EA0A0]">
+                <p>Already have an account?{" "}
+                    <NavLink
+                        to={`/login`}
+                        className="text-black hover:underline"
+                    >
+                        Sign In
+                    </NavLink></p>
+            </div>
         </div>
     )
 }
