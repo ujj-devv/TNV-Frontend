@@ -1,6 +1,6 @@
 import Layout from "../../global/Layout.";
 
-function LOUDataAnalytics() {
+function ComingSoon() {
   return (
     <Layout customClass="flex flex-col md:flex-row items-center justify-center gap-16 p-8 md:px-8 md:py-16 bg-gray-50 min-h-screen">
       {/* Text Section */}
@@ -43,4 +43,4 @@ function LOUDataAnalytics() {
   );
 }
 
-export default LOUDataAnalytics;
+export default ComingSoon;
