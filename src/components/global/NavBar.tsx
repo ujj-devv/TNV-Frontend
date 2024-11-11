@@ -26,7 +26,7 @@ const NavBar = () => {
           {/* Logo */}
           <div className="flex items-center">
             {/* <img
-              src="https://dev.tnvlei.com/logo-dark.png"
+              src="../../assets/png/lei-logo.png"
               alt="Logo"
               className="h-12"
             /> */}

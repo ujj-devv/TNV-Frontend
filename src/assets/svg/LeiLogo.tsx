@@ -1,11 +1,11 @@
-const LeiLogo = ({ color = "#fff", width = "100", height = "", ...props }) => (
+const LeiLogo = ({ color = "#fff", width = "100", height = "100", ...props }) => (
     <svg
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      viewBox="0 0 1080 1080"
+      viewBox="350 250 400 600"
       width={width}
       height={height}
       style={{

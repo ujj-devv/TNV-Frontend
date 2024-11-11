@@ -22,6 +22,7 @@ const MuiInput = ({
             error={isError}
             helperText={helperText}
             placeholder={placeholder}
+            fullWidth  
             sx={{
                 "& .MuiInputLabel-root": { color: "#32736A" },  // Default label color
                 "& .MuiInputLabel-root.Mui-focused": { color: "#32736A" },  // Focused label color

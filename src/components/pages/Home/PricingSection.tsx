@@ -21,7 +21,7 @@ const PricingSection = () => {
     <>
       <div className="text-center mb-8 px-8 md:px-32 md:py-16 bg-[#F3FAF8]">
         <Layout>
-          <h1 className="font-bold text-5xl text-[#2A5B55] mb-4">
+          <h1 className="font-bold text-5xl 2A5B55] mb-4">
             Simple and <span className="text-[#D8EFE9]">transparent</span>{" "}
             pricing
           </h1>
@@ -30,10 +30,6 @@ const PricingSection = () => {
             LEI s customers only pay for applying for or renewal of the LEI
             code. Updating data, transferring the LEI code or other activities
             related to the code are all free of charge for our customers.
-          </p>
-          <p className="text-[#0F172A] font-medium text-xl">
-            NO HIDDEN FEES! ALL FEES ARE INCLUDED IN OUR LEI PRICE, GST WILL BE
-            ADDED.
           </p>
         </Layout>
       </div>
