@@ -5,7 +5,7 @@ import { ButtonType } from "../ui/Button/button.types";
 import Layout from "./Layout.";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthType } from "../../pages/Auth/auth.enum";
-// import LeiLogo from "../../assets/svg/LeiLogo";
+import LeiLogo from "../../assets/svg/LeiLogo";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,14 +22,15 @@ const NavBar = () => {
   return (
     <div className="bg-[#32736A]">
       <Layout>
-        <nav className="text-white px-4 py-4 flex justify-between items-center">
+        <nav className="text-white px-4  flex justify-between items-center mx-4">
           {/* Logo */}
           <div className="flex items-center">
-            <img
+            {/* <img
               src="https://dev.tnvlei.com/logo-dark.png"
               alt="Logo"
-              className="h-8"
-            />
+              className="h-12"
+            /> */}
+            <LeiLogo/>
           </div>
 
           {/* NavLinks for larger screens */}

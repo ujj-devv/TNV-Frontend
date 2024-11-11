@@ -1,4 +1,4 @@
-const LeiLogo = ({ color = "#000", width = "150", height = "", ...props }) => (
+const LeiLogo = ({ color = "#fff", width = "100", height = "", ...props }) => (
     <svg
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const LeiLogo = ({ color = "#000", width = "150", height = "", ...props }) => (
           width={118.89}
           height={23.37}
         />
-        <text transform="matrix(1 0 0 1 586.9053 654.0118)" className="st2 st3" fill={color}>
+        <text transform="matrix(1 0 0 1 586.9053 654.0118)" className="st2 st3 " fill={color}>
           {"by tnv"}
         </text>
       </g>
