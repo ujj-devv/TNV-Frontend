@@ -1,12 +1,15 @@
-import AuthHeader from "../../../global/AuthHeader/AuthHeader"
-import AuthImageSection from "../../../global/AuthImageSection/AuthImageSection"
-import LoginForm from "../../../global/Forms/LoginForm"
-import RegisterImage from "../../../../assets/png/lei-flower.jpg";
+import AuthHeader from "../../../global/AuthHeader/AuthHeader";
+import AuthImageSection from "../../../global/AuthImageSection/AuthImageSection";
+import LoginForm from "../../../global/Forms/LoginForm";
+import RegisterImage from "../../../../assets/png/authImage.jpg";
 
 const Login = () => {
   return (
     <div>
-      <div className="h-screen overflow-y-auto flex flex-wrap w-full" style={{ height: "calc(var(--vh, 1vh) * 100)" }}>
+      <div
+        className="h-screen overflow-y-auto flex flex-wrap w-full"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      >
         <AuthImageSection image={RegisterImage} altText="Login Image" />
 
         {/* Content Section */}
@@ -19,7 +22,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
