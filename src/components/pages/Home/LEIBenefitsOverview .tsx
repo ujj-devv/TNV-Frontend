@@ -4,7 +4,7 @@ import LeiDetailCard from "./components/LeiDetailCard";
 
 const LEIBenefitsOverview = () => {
   return (
-    <div className="px-8 md:px-32 pt-16">
+    <div className="px-8 md:px-32 py-16">
       <Layout>
         <div className="text-center mb-16">
           <h1 className="font-bold text-5xl">

@@ -19,7 +19,7 @@ const PricingSection = () => {
 
   return (
     <>
-      <div className="text-center mb-8 px-8 md:px-32 md:py-16 bg-[#F3FAF8]">
+      <div className="text-center mb-8 p-8 md:px-32 md:py-16 bg-[#F3FAF8]">
         <Layout>
           <h1 className="font-bold text-5xl 2A5B55] mb-4">
             Simple and <span className="text-[#D8EFE9]">transparent</span>{" "}
