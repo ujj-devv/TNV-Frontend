@@ -10,7 +10,7 @@ const Login = () => {
         <AuthImageSection image={RegisterImage} altText="Login Image" />
 
         {/* Content Section */}
-        <div className="flex flex-col justify-evenly items-center w-full md:w-1/2 px-6 md:px-12 lg:px-24">
+        <div className="flex flex-col justify-center gap-16 items-center w-full md:w-1/2 px-6 md:px-12 lg:px-24">
           <AuthHeader
             authHeading={"Sign In"}
             authDescription={"Sign in to proceed"}

@@ -29,7 +29,7 @@ const RegisterForm = () => {
         console.log('values are', values)
     }
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 w-3/4">
             <Formik
                 initialValues={initialValues}
                 onSubmit={(values) => onSubmit(values)}
