@@ -56,7 +56,7 @@ const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
             <div className="flex justify-center items-center m-16">
                 {isLoading ? renderSkeleton() : (
                     <>
-                        <Table
+                        { paginatedData?.length> 0 && <Table
                             columns={columns}
                             data={paginatedData}
                             rowKey="lei"
@@ -75,11 +75,11 @@ const SearchResultsSection = ({ query }:{query:LeiRecordParamsType}) => {
                                 onPrev: () => setCurrentPage((prev) => Math.max(prev - 1, 1)),
                                 onNext: () => setCurrentPage((prev) => prev + 1)
                             }}
-                        />
+                        />}
 
                         {/* No Results Message */}
                         {(!data || paginatedData.length === 0) && (
-                            <p className="text-center text-gray-600 mt-8">No results found.</p>
+                            <p className="text-center text-2xl font-semibold text-[#32736A] mt-8">No results found.</p>
                         )}
                     </>
                 )}

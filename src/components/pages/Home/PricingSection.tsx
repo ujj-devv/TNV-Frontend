@@ -20,7 +20,7 @@ const PricingSection = () => {
     <>
       <div className="text-center mb-8 p-8 md:px-32 md:py-16 bg-[#F3FAF8]">
         <Layout>
-          <h1 className="font-bold text-5xl text-[#2A5B55] mb-4">Simple and <span className="text-[#D8EFE9]">transparent</span> pricing</h1>
+          <h1 className="font-bold text-5xl 2A5B55] mb-4">Simple and <span className="text-[#D8EFE9]">transparent</span> pricing</h1>
           <p className="text-[#9EA0A0] font-normal text-base mb-20">TNV LEI enables you to apply for a code
             for up to five years. TNV LEI s customers only pay for applying for or renewal of the LEI code.
             Updating data, transferring the LEI code or other activities related to the code are all free

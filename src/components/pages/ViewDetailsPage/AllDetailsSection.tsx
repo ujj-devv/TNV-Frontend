@@ -58,14 +58,15 @@ const AllDetailsSection = ({ details }: { details: LeiRecord }) => {
     console.log('details of id this is', details)
     return (
         <div className="mb-16">
-            <Layout>
-                <div className="flex flex-col gap-16 mx-16 md:mx-32">
-                    <DetailCard data={simplifyLeiEntityRecords(details) as unknown as Record<string, string | number | boolean | JSX.Element>} detailName={"Entity"} />
-                    <DetailCard data={simplifyLeiRelationshipRecords(details?.relationships)} detailName={"Relationship"} />
-                    <DetailCard data={simplifyLeiRegistrationRecords(details?.attributes?.registration)} detailName={"Registration"} />
-                </div>
-            </Layout>
-        </div>
+        <Layout>
+            <div className="flex flex-col gap-8 sm:gap-12 md:gap-16 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
+                <DetailCard data={simplifyLeiEntityRecords(details) as unknown as Record<string, string | number | boolean | JSX.Element>} detailName={"Entity"} />
+                <DetailCard data={simplifyLeiRelationshipRecords(details?.relationships)} detailName={"Relationship"} />
+                <DetailCard data={simplifyLeiRegistrationRecords(details?.attributes?.registration)} detailName={"Registration"} />
+            </div>
+        </Layout>
+    </div>
+    
     )
 }
 

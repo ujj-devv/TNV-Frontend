@@ -15,6 +15,7 @@ import RefundPolicy from "../components/pages/Home/RefundPolicy";
 import Cdf from "../components/pages/Home/Cdf";
 import NotFound from "../pages/NotFound";
 import Auth from "../pages/Auth/Auth";
+import ForgotPassword from "../pages/ForgotPassword";
 
 
 export const router = createBrowserRouter([
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
   },
   {
     path: "/:authType",
-    element: <Auth />, // No NavBar and Footer for auth routes
+    element: <Auth />, 
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />, 
   },
 ]);
