@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout = ({ children, customClass }: LayoutProps) => {
   return (
-    <div className={`max-w-[1790px] mx-auto my-0  ${customClass}`}>
+    <div className={`max-w-full md:max-w-[1790px] mx-auto my-0 ${customClass}`}>
       {children}
     </div>
   );

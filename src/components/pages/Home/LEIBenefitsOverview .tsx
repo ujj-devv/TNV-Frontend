@@ -4,18 +4,19 @@ import LeiDetailCard from "./components/LeiDetailCard";
 
 const LEIBenefitsOverview = () => {
   return (
-    <div className="px-32 pb-16">
+    <div className="px-8 md:px-32 pt-16">
       <Layout>
         <div className="text-center mb-16">
-          <h1 className="font-bold text-5xl">Why your business needs an <span className="text-[#32736A]">LEI</span></h1>
+          <h1 className="font-bold text-5xl">
+            Why your business needs an{" "}
+            <span className="text-[#32736A]">LEI</span>
+          </h1>
         </div>
         <div className="flex gap-16 justify-between">
           <div className="flex flex-col gap-16">
-            {
-              leiBenefits.map(({ name, description }) => (
-                <LeiDetailCard key={name} name={name} description={description} />
-              ))
-            }
+            {leiBenefits.map(({ name, description }) => (
+              <LeiDetailCard key={name} name={name} description={description} />
+            ))}
           </div>
           <div className="bg-[#F3F0F0] hidden w-1/2 md:block"></div>
         </div>
