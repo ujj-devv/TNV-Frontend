@@ -16,6 +16,7 @@ import Cdf from "../components/pages/Home/Cdf";
 import NotFound from "../pages/NotFound";
 import Auth from "../pages/Auth/Auth";
 import ForgotPassword from "../pages/ForgotPassword";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 
 export const router = createBrowserRouter([
@@ -48,5 +49,9 @@ export const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPassword />, 
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />, 
   },
 ]);
