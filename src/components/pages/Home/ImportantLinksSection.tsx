@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-import { helpfulLinks, linksServices } from "../../../util/data/services.data";
 import Layout from "../../global/Layout.";
 import SearchBar from "../../ui/SearchBar/SearchBar";
 
